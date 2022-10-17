@@ -2,21 +2,66 @@
     The main style for the houses app.
 */
 
+#housesApp {
+    padding: 2%;
+}
+
 #memberList {
     padding: 2%;
 }
 
-.singleMember {
+.defaultMember {
     padding: 2%;
-    background-color: lightyellow;
+    background-color: lightgreen;
+    color: black;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.blackEagles {
+    padding: 2%;
+    background-color: lightcoral;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+
+.blueLions {
+    padding: 2%;
+    background-color: lightblue;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.goldenDeer {
+    padding: 2%;
+    background-color: lightyellow;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    border-style: solid;
+    border-width: 1px;
 }
 
 label {
     font-weight: bold;
+    font-size: 1.4em;
 }
 
 p {
     text-align: center;
+    font-size: 18px;
 }

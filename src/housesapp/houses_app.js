@@ -6,19 +6,19 @@ import "./houses_app.css";
 const houseMembers = [
     { 
         "name" : "Dimitri",
-        "house" :" Blue Lions",
+        "house" : "Blue Lions",
         "weapon":  "Lance",
         "isMagicUser" : false
     },
     { 
         "name" : "Claude",
-        "house" :" Golden Deer",
+        "house" : "Golden Deer",
         "weapon":  "Bow",
         "isMagicUser" : false
     },
     { 
         "name" : "Edlegard",
-        "house" :" Black Eagles",
+        "house" : "Black Eagles",
         "weapon":  "Axe",
         "isMagicUser" : false
     },
@@ -43,25 +43,67 @@ const houseMembers = [
 ];
 
 //  A single member
-function SingleMember(){
+function SingleMember(props){
+
+    var cname = "defaultMember";
+
+    var isMagic = "No";
+
+    if(props.isMagicUser == true){
+        isMagic = "Yes";
+    }
+
+    if(props.house == "Blue Lions"){
+        cname = "blueLions";
+    }
+
+    if(props.house == "Golden Deer"){
+        cname = "goldenDeer";
+    }
+
+    if(props.house == "Black Eagles"){
+        cname = "blackEagles";
+    }
+
     return (
-        <div className="singleMember">
+        <div className={ cname }>
             <label for="lblName">Name:</label>
             <p className="lblName">
-                { houseMembers[0].name }
+                { props.name }
             </p>
             <label for="lblHouse">House:</label>
             <p className="lblHouse">
-                { houseMembers[0].house }
+                { props.house }
             </p>
             <label for="lblWeapon">Weapon Type:</label>
             <p className="lblWeapon">
-                { houseMembers[0].weapon }
+                { props.weapon }
             </p>
             <label for="lblMagic">Is Magic User:</label>
             <p className="lblMagic">
-                { houseMembers[0].isMagicUser.toString() }
+                { isMagic }
             </p>
+        </div>
+    );
+}
+
+//  Loop through the members
+function Members(){
+
+    const membersList = houseMembers.map((member) => 
+
+        <SingleMember 
+            key = { member.name.toLowerCase() }
+            name = { member.name }
+            house = { member.house }
+            weapon = { member.weapon }
+            isMagicUser = { member.isMagicUser }
+        />
+    );
+
+    return (
+        <div id="memberList">
+            { membersList }
         </div>
     );
 }
@@ -71,9 +113,7 @@ function HousesApp(){
     return (
         <div id="housesApp">
             <h2>Houses list</h2>
-            <div id="memberList">
-                <SingleMember />
-            </div>            
+            <Members />
         </div>
     );
 }
