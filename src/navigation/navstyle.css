@@ -1,0 +1,10 @@
+/*
+    The main style for the navigation
+*/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2em;
+}

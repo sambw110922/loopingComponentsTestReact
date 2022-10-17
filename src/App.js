@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
+//  Imports the main navigation
+import { Navigation } from "./navigation/navigation.js";
+
+//  The  main houses app
+import { HousesApp } from "./housesapp/houses_app.js";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation />
+      <HousesApp />
     </div>
   );
 }

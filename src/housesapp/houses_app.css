@@ -1,0 +1,22 @@
+/*
+    The main style for the houses app.
+*/
+
+#memberList {
+    padding: 2%;
+}
+
+.singleMember {
+    padding: 2%;
+    background-color: lightyellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+label {
+    font-weight: bold;
+}
+
+p {
+    text-align: center;
+}
